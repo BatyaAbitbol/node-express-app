@@ -5,8 +5,7 @@ const app = express();
 
 let PORT = process.env.PORT || 8000;
 
-app.get("/", (req, res) => res.send("NODE 🏃‍♀️🏃‍♂️🏃\n\nList of apps - URL: /apps\nList of apps names - URL /names"));
-app.get("/apps", (req, res) => {
+app.get("/", (req, res) => {
     sdk.auth('rnd_eqwvqYmoyRrfvWbazgfLnTaPk4UI');
     sdk.getServices({ limit: '20' })
         .then(({ data }) => {
