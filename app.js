@@ -12,7 +12,7 @@ app.get("/apps", (req, res) => {
         .then(({ data }) => {
             console.log(data)
             
-            res.send(data.map(e => e.service.name))
+            res.json(data.map(e => e.service.name))
         })
         .catch(err => console.error(err));
 });
