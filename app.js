@@ -11,7 +11,8 @@ app.get("/apps", (req, res) => {
     sdk.getServices({ limit: '20' })
         .then(({ data }) => {
             console.log(data)
-            res.send(data)
+            
+            res.send(data.map(e => e.service.name))
         })
         .catch(err => console.error(err));
 });
